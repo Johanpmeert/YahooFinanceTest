@@ -4,26 +4,9 @@ import yfinance
 
 print("Stock quote getter in Python")
 
-stock = yfinance.Ticker('TSLA')
-print(f"\n{stock.ticker} = {stock.info['shortName']}")
-print(f"Stock price = {stock.info['previousClose']} {stock.info['currency']}")
+stocklist = ['TSLA','ABI.BR','ASML.AS','NOKIA.PA','GOOGL.MI','GSK.L']
 
-stock = yfinance.Ticker('ABI.BR')
-print(f"\n{stock.ticker} = {stock.info['shortName']}")
-print(f"Stock price = {stock.info['previousClose']} {stock.info['currency']}")
-
-stock = yfinance.Ticker('ASML.AS')
-print(f"\n{stock.ticker} = {stock.info['shortName']}")
-print(f"Stock price = {stock.info['previousClose']} {stock.info['currency']}")
-
-stock = yfinance.Ticker('NOKIA.PA')
-print(f"\n{stock.ticker} = {stock.info['shortName']}")
-print(f"Stock price = {stock.info['previousClose']} {stock.info['currency']}")
-
-stock = yfinance.Ticker('GOOGL.MI')
-print(f"\n{stock.ticker} = {stock.info['shortName']}")
-print(f"Stock price = {stock.info['previousClose']} {stock.info['currency']}")
-
-stock = yfinance.Ticker('GSK.L')
-print(f"\n{stock.ticker} = {stock.info['shortName']}")
-print(f"Stock price = {stock.info['previousClose']} {stock.info['currency']}")
+for stock in stocklist:
+    stockdata = yfinance.Ticker(stock)
+    print(f"\n{stockdata.ticker} = {stockdata.info['shortName']}")
+    print(f"Stock price = {stockdata.info['previousClose']} {stockdata.info['currency']}")
